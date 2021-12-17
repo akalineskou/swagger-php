@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A "Contact Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#contact-object.
+ * A "Contact Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#contact-object.
  *
  * Contact information for the exposed API.
  *
@@ -78,12 +78,12 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'name' => $name,
-                    'url' => $url,
-                    'email' => $email,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($attachables),
-                ]);
+                'name' => $name,
+                'url' => $url,
+                'email' => $email,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($attachables),
+            ]);
         }
     }
 } else {

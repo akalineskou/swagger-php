@@ -11,7 +11,7 @@ use OpenApi\Generator;
 /**
  * A "Security Scheme Object".
  *
- * https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#securitySchemeObject
+ * https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#securitySchemeObject
  *
  * @Annotation
  */
@@ -159,18 +159,18 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'ref' => $ref,
-                    'securityScheme' => $securityScheme,
-                    'type' => $type,
-                    'description' => $description,
-                    'name' => $name,
-                    'in' => $in,
-                    'bearerFormat' => $bearerFormat,
-                    'scheme' => $scheme,
-                    'openIdConnectUrl' => $openIdConnectUrl,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($flows, $attachables),
-                ]);
+                'ref' => $ref,
+                'securityScheme' => $securityScheme,
+                'type' => $type,
+                'description' => $description,
+                'name' => $name,
+                'in' => $in,
+                'bearerFormat' => $bearerFormat,
+                'scheme' => $scheme,
+                'openIdConnectUrl' => $openIdConnectUrl,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($flows, $attachables),
+            ]);
         }
     }
 } else {

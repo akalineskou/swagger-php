@@ -14,7 +14,7 @@ use OpenApi\Generator;
  * This object is based on the [JSON Schema Specification](http://json-schema.org) and uses a predefined subset of it.
  * On top of this subset, there are extensions provided by this specification to allow for more complete documentation.
  *
- * A "Schema Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#schemaObject
+ * A "Schema Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject
  * JSON Schema: http://json-schema.org/
  *
  * @Annotation
@@ -408,17 +408,17 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'schema' => $schema,
-                    'description' => $description,
-                    'title' => $title,
-                    'type' => $type,
-                    'format' => $format,
-                    'ref' => $ref,
-                    'enum' => $enum ?? Generator::UNDEFINED,
-                    'deprecated' => $deprecated ?? Generator::UNDEFINED,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($externalDocs, $items, $attachables),
-                ]);
+                'schema' => $schema,
+                'description' => $description,
+                'title' => $title,
+                'type' => $type,
+                'format' => $format,
+                'ref' => $ref,
+                'enum' => $enum ?? Generator::UNDEFINED,
+                'deprecated' => $deprecated ?? Generator::UNDEFINED,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($externalDocs, $items, $attachables),
+            ]);
         }
     }
 } else {

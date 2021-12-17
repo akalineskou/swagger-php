@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A Server Object https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#server-object.
+ * A Server Object https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-object.
  *
  * An object representing a Server.
  *
@@ -98,11 +98,11 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'url' => $url,
-                    'description' => $description,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($variables, $attachables),
-                ]);
+                'url' => $url,
+                'description' => $description,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($variables, $attachables),
+            ]);
         }
     }
 } else {

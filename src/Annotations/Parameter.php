@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * [A "Parameter Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#parameter-object.
+ * [A "Parameter Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameter-object.
  *
  * Describes a single operation parameter.
  *
@@ -284,13 +284,13 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'name' => $name,
-                    'in' => $this->in !== Generator::UNDEFINED ? $this->in : $in,
-                    'required' => $this->required !== Generator::UNDEFINED ? $this->required : ($required ?? Generator::UNDEFINED),
-                    'ref' => $ref,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($schema, $examples, $attachables),
-                ]);
+                'name' => $name,
+                'in' => $this->in !== Generator::UNDEFINED ? $this->in : $in,
+                'required' => $this->required !== Generator::UNDEFINED ? $this->required : ($required ?? Generator::UNDEFINED),
+                'ref' => $ref,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($schema, $examples, $attachables),
+            ]);
         }
     }
 } else {

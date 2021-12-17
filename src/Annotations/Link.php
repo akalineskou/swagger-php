@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A "Link Object" https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#link-object.
+ * A "Link Object" https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#link-object.
  *
  * The Link object represents a possible design-time link for a response.
  * The presence of a link does not guarantee the caller's ability to successfully invoke it, rather it provides a known relationship and traversal mechanism between responses and other operations.
@@ -113,13 +113,13 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'link' => $link,
-                    'ref' => $ref,
-                    'operationId' => $operationId,
-                    'parameters' => $parameters ?? Generator::UNDEFINED,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($attachables),
-                ]);
+                'link' => $link,
+                'ref' => $ref,
+                'operationId' => $operationId,
+                'parameters' => $parameters ?? Generator::UNDEFINED,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($attachables),
+            ]);
         }
     }
 } else {

@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * An "Info Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#info-object.
+ * An "Info Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#info-object.
  *
  * The object provides metadata about the API.
  * The metadata may be used by the clients if needed, and may be presented in editing or documentation generation tools for convenience.
@@ -111,13 +111,13 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'version' => $version,
-                    'description' => $description,
-                    'title' => $title,
-                    'termsOfService' => $termsOfService,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($contact, $license, $attachables),
-                ]);
+                'version' => $version,
+                'description' => $description,
+                'title' => $title,
+                'termsOfService' => $termsOfService,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($contact, $license, $attachables),
+            ]);
         }
     }
 } else {

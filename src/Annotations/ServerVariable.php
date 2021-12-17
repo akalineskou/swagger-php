@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A Server Variable Object https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#server-variable-object.
+ * A Server Variable Object https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-variable-object.
  *
  * An object representing a Server Variable for server URL template substitution.
  *
@@ -101,14 +101,14 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'serverVariable' => $serverVariable,
-                    'description' => $description,
-                    'default' => $default,
-                    'enum' => $enum ?? Generator::UNDEFINED,
-                    'variables' => $variables ?? Generator::UNDEFINED,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($attachables),
-                ]);
+                'serverVariable' => $serverVariable,
+                'description' => $description,
+                'default' => $default,
+                'enum' => $enum ?? Generator::UNDEFINED,
+                'variables' => $variables ?? Generator::UNDEFINED,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($attachables),
+            ]);
         }
     }
 } else {

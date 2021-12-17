@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A "Path Item Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#path-item-object.
+ * A "Path Item Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#path-item-object.
  *
  * Describes the operations available on a single path.
  *
@@ -162,9 +162,9 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($attachables),
-                ]);
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($attachables),
+            ]);
         }
     }
 } else {

@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A "Media Type Object" https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#media-type-object.
+ * A "Media Type Object" https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#media-type-object.
  *
  * Each Media Type Object provides schema and examples for the media type identified by its key.
  *
@@ -93,12 +93,12 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'mediaType' => $mediaType,
-                    'example' => $example,
-                    'encoding' => $encoding,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($schema, $examples, $attachables),
-                ]);
+                'mediaType' => $mediaType,
+                'example' => $example,
+                'encoding' => $encoding,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($schema, $examples, $attachables),
+            ]);
         }
     }
 } else {

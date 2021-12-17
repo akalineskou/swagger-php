@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A "Response Object": https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#response-object.
+ * A "Response Object": https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#response-object.
  *
  * Describes a single response from an API Operation, including design-time, static links to operations based on the response.
  *
@@ -121,11 +121,11 @@ if (\PHP_VERSION_ID >= 80100) {
             ?array $attachables = null
         ) {
             parent::__construct($properties + [
-                    'response' => $response,
-                    'description' => $description,
-                    'x' => $x ?? Generator::UNDEFINED,
-                    'value' => $this->combine($content, $links, $attachables),
-                ]);
+                'response' => $response,
+                'description' => $description,
+                'x' => $x ?? Generator::UNDEFINED,
+                'value' => $this->combine($content, $links, $attachables),
+            ]);
         }
     }
 } else {

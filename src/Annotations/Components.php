@@ -9,7 +9,7 @@ namespace OpenApi\Annotations;
 use OpenApi\Generator;
 
 /**
- * A Components Object: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#components-object.
+ * A Components Object: https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#components-object.
  *
  * Holds a set of reusable objects for different aspects of the OA.
  * All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
@@ -122,8 +122,7 @@ if (\PHP_VERSION_ID >= 80100) {
         public function __construct(
             array $properties = []
         ) {
-            parent::__construct($properties + [
-                ]);
+            parent::__construct($properties + []);
         }
     }
 } else {
